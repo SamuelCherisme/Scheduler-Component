@@ -1,3 +1,15 @@
+# Starting the Application
+
+npm start
+
+or
+
+yarn start
+
+
+
+
+
 # About the Scheduler App
 
  A Calender or a Schedule app that allows the user you, To place or schedule an event at a specific time and day. The application was built in React.
