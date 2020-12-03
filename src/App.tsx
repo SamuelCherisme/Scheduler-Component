@@ -1,10 +1,8 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 import './App.css';
-
-import {Inject, ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, 
-  EventSettingsModel} from '@syncfusion/ej2-react-schedule';
-
-//import {DataManager,WebApiAdaptor} from '@syncfusion/ej2-data'
+import {Inject, ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, EventSettingsModel} from '@syncfusion/ej2-react-schedule';
+import {DataManager,WebApiAdaptor} from '@syncfusion/ej2-data'
 
 
 class App extends React.Component{
@@ -28,17 +26,17 @@ class App extends React.Component{
     
     }],
     fields: {
-      subject: {name: 'Summary', default: 'No title is provided.'},
+      subject: {name: 'Summary', default: 'Add an Event.'},
       startTime: {name: 'Start'},
       endTime: {name: 'End'}
     }
   };
 
-// private remoteData = new DataManager({
-//   url: 'http://js.syncfusion.com/demos.ejservices/api/Schedule/LoadData',
-//   adaptor: new WebApiAdaptor,
-//   crossDomain: true
-// });
+private remoteData = new DataManager({
+  url: 'http://js.syncfusion.com/demos.ejservices/api/Schedule/LoadData',
+  adaptor: new WebApiAdaptor,
+  crossDomain: true
+});
 
 public render(){
   return (<ScheduleComponent currentView='Month' selectedDate={new Date(2020, 0, 11)}
