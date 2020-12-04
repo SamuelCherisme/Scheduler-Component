@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import axios from 'axios'
 import './App.css';
 import {Inject, ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, EventSettingsModel} from '@syncfusion/ej2-react-schedule';
 import {DataManager,WebApiAdaptor} from '@syncfusion/ej2-data'
@@ -32,6 +31,14 @@ class App extends React.Component{
     }
   };
 
+  async componentDidMount() {
+    const response = await fetch(`http://js.syncfusion.com/demos.ejservices/api/Schedule/LoadData`);
+    const json = await response.json();
+    this.setState({ usernames: json });
+  }
+  
+
+  
 private remoteData = new DataManager({
   url: 'http://js.syncfusion.com/demos.ejservices/api/Schedule/LoadData',
   adaptor: new WebApiAdaptor,
@@ -45,6 +52,9 @@ public render(){
   </ScheduleComponent>)
 
   }
+
+  
+
 
 }
 export default App;
