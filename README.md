@@ -1,14 +1,14 @@
 # Starting the Application
 
+npm install react react-dom typescript @types/react @types/react-dom --save
+
+npm install @syncfusion/ej2-react-schedule --save
+
 npm start
 
 or
 
 yarn start
-
-
-
-
 
 # About the Scheduler App
 
